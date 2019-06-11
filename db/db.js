@@ -21,12 +21,12 @@ function getLastId(collection) {
 
 // representa un SELECT de SQL
 // TODO: tercer parametro es demasiado especifico, deberia ser un objeto que represente filtros adicionales
-function select(collection, id, userId) {
+function select(collection, id, clienteId) {
     let data = collections[collection].data
     if(id) {
-        return data.find(e => e.id === id && (userId ? e.userId === userId : true))
+        return data.find(e => e.id === id && (clienteId ? e.clienteId === clienteId : true))
     }else {
-        return data.filter(e => userId ? e.userId === userId : true)
+        return data.filter(e => clienteId ? e.clienteId === clienteId : true)
     }
 }
 

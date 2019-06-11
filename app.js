@@ -22,9 +22,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 // rutas de los recursos, representa el Nivel 1 de un API REST
 app.use('/', indexRouter) // pagina de hola mundo
 app.use('/clientes', clientesRouter) // operaciones hacia el recurso de 'usuarios'
-app.use('/clientes/:userId/todos', (req, res, next) => { // operaciones hacia el recurso de 'tareas' del 'usuario'
-    let userId = parseInt(req.params.userId)
-    req.body.userId = userId
+app.use('/clientes/:clienteId/todos', (req, res, next) => { // operaciones hacia el recurso de 'tareas' del 'usuario'
+    let clienteId = parseInt(req.params.clienteId)
+    req.body.clienteId = clienteId
     next()
 }, todosRouter)
 app.use('/todos', todosRouter) // operaciones hacia el recurso de 'tareas'

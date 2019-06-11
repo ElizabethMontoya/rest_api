@@ -6,16 +6,16 @@ let DB = require('../db/db')
 
 // GET consultar coleccion de tareas
 router.get('/', (req, res, next) => {
-    let userId = parseInt(req.body.userId)
-    let todos = DB.select('todos', null, userId)
+    let clienteId = parseInt(req.body.clienteId)
+    let todos = DB.select('todos', null, clienteId)
     res.status(200).send(todos)
 });
 
 // GET consultar tarea especifico
 router.get('/:id', (req, res, next) => {
     let id = parseInt(req.params.id)
-    let userId = parseInt(req.body.userId)
-    let todo = DB.select('todos', id, userId)
+    let clienteId = parseInt(req.body.clienteId)
+    let todo = DB.select('todos', id, clienteId)
     res.status(200).send(todo)
 });
 

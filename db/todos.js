@@ -2,7 +2,7 @@ const name = 'todos'
 
 let schema = {
     id: 'number',
-    userId: 'number',
+    clienteId: 'number',
     title: 'string',
     description: 'string'
 }
@@ -11,7 +11,7 @@ let schema = {
 let data = [
     {
         id: 1,
-        userId: 1,
+        clienteId: 1,
         title: "lunch",
         description: "Go for lunc by 2pm"
     }
